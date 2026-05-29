@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.name }} | Residential Construction</title>
+    <meta
+      name="description"
+      content="Residential construction, remodeling, additions, and custom finish work for homeowners across the Louisiana and Mississippi Gulf Coast."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('public_file', filename='home.css') }}">
+  </head>
+  <body>
+    <header class="site-banner-wrap">
+      <div class="site-banner">
+        <a class="site-banner__logo" href="#top" aria-label="{{ site.name }} home">
+          <img src="{{ url_for('public_file', filename=site.logo_asset) }}" alt="{{ site.name }} logo banner">
+        </a>
+
+        <div class="site-banner__actions">
+          <a class="button button--ghost" href="{{ site.phone_href }}">Call {{ site.phone_display }}</a>
+          <a class="button" href="{{ site.quote_href }}">Request a Quote</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-shell">
+      <main id="top">
+        <section class="hero section-card">
+          <div class="hero__content">
+            <p class="eyebrow">{{ site.eyebrow }}</p>
+            <h1>Residential construction that feels personal, organized, and built to last.</h1>
+            <p class="hero__lede">
+              Sela Construction shifts the message toward the home: kitchens, baths, additions,
+              renovations, and ground-up residential work managed with direct communication and visible site leadership.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button" href="#services">Explore Residential Services</a>
+              <a class="button button--ghost" href="#contact">Start Your Project</a>
+            </div>
+
+            <dl class="hero__stats" aria-label="Company highlights">
+              <div>
+                <dt>Serving</dt>
+                <dd>Since 2005</dd>
+              </div>
+              <div>
+                <dt>Coverage</dt>
+                <dd>Louisiana + Mississippi</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>Remodels to ground-up homes</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero__visual">
+            <figure class="hero-photo">
+              <img src="{{ url_for('public_file', filename=site.hero_image_asset) }}" alt="Residential construction showcase">
+            </figure>
+
+            <div class="hero__visual-grid">
+              <figure class="region-card">
+                <img src="{{ url_for('public_file', filename=site.service_area_asset) }}" alt="Louisiana and Mississippi together in the Gulf Coast service area graphic">
+                <figcaption class="region-card__copy">
+                  <p class="eyebrow">Louisiana + Mississippi Gulf Coast</p>
+                  <h2>One Gulf Coast footprint, two licensed residential service areas.</h2>
+                </figcaption>
+              </figure>
+
+              <aside class="hero-note">
+                <p class="eyebrow">Homeowner-first direction</p>
+                <h2>From layout fixes to full-scale renovations, the residential side leads the page.</h2>
+                <p>
+                  The new hierarchy keeps the existing brand but brings homeowners straight into the rooms, scopes, and service area they care about.
+                </p>
+                <ul class="hero-note__list">
+                  <li>Kitchen and bath transformations</li>
+                  <li>Whole-home renovations and additions</li>
+                  <li>Custom cabinetry and finish work</li>
+                </ul>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="trust-strip" aria-label="Trust indicators">
+          {% for point in trust_points %}
+            <article class="trust-tile">
+              <p class="trust-tile__title">{{ point.title }}</p>
+              <p>{{ point.description }}</p>
+            </article>
+          {% endfor %}
+        </section>
+
+        <section class="section-card section-stack" id="services">
+          <div class="section-head">
+            <p class="eyebrow">Residential Services</p>
+            <h2>Clearer positioning around the projects homeowners ask for first.</h2>
+            <p>
+              The service mix keeps the broader experience in view while putting residential construction,
+              remodeling, and finish quality at the center of the page.
+            </p>
+          </div>
+
+          <div class="service-grid">
+            {% for service in services %}
+              <article class="service-card">
+                <span class="service-card__marker"></span>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="section-card section-stack showcase" id="work">
+          <div class="section-head section-head--split">
+            <div>
+              <p class="eyebrow">Residential Work</p>
+              <h2>Existing imagery, reframed around warm, high-function living spaces.</h2>
+            </div>
+            <p class="section-head__aside">
+              Real project imagery supports the residential story with cleaner, more focused presentation.
+            </p>
+          </div>
+
+          <div class="project-grid">
+            {% for project in projects %}
+              <article class="project-card">
+                <img src="{{ url_for('public_file', filename=project.image_asset) }}" alt="{{ project.image_alt }}">
+                <div class="project-card__body">
+                  <h3>{{ project.title }}</h3>
+                  <p>{{ project.description }}</p>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="section-card section-stack process" id="process">
+          <div class="section-head">
+            <p class="eyebrow">Process</p>
+            <h2>A small-team build path that works well for occupied homes.</h2>
+          </div>
+
+          <div class="process-grid">
+            {% for item in process_steps %}
+              <article class="process-card">
+                <span class="process-card__step">{{ item.step }}</span>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="contact-band" id="contact">
+          <div class="contact-band__panel section-card">
+            <p class="eyebrow">Contact</p>
+            <h2>Talk through the next residential project before the scope gets messy.</h2>
+            <p>
+              Reach Sela Construction for remodels, finish upgrades, additions, or a full-home reset across the Louisiana and Mississippi coast.
+            </p>
+
+            <div class="contact-grid">
+              <a class="contact-item" href="{{ site.phone_href }}">
+                <span class="contact-item__label">Phone</span>
+                <strong>{{ site.phone_display }}</strong>
+              </a>
+              <a class="contact-item" href="{{ site.email_href }}">
+                <span class="contact-item__label">Email</span>
+                <strong>{{ site.email }}</strong>
+              </a>
+              <div class="contact-item">
+                <span class="contact-item__label">Service Area</span>
+                <strong>{{ site.location }}</strong>
+              </div>
+              <div class="contact-item">
+                <span class="contact-item__label">Office Hours</span>
+                <strong>{{ site.hours }}</strong>
+              </div>
+            </div>
+          </div>
+
+          <aside class="contact-band__aside">
+            <img src="{{ url_for('public_file', filename=site.logo_asset) }}" alt="{{ site.name }} mark">
+            <p>{{ site.license_copy }}</p>
+            <div class="contact-band__actions">
+              <a class="button" href="{{ site.quote_href }}">Request a Quote</a>
+              <a class="button button--ghost" href="{{ site.phone_href }}">Call {{ site.phone_display }}</a>
+            </div>
+          </aside>
+        </section>
+
+        <section class="review-marquee" id="reviews" aria-labelledby="review-heading">
+          <div class="review-marquee__head">
+            <div class="review-marquee__copy">
+              <p class="eyebrow">Google Reviews</p>
+              <h2 id="review-heading">5-star homeowner feedback, wired for Google Places.</h2>
+              <p>{{ review_feed.description }}</p>
+            </div>
+
+            <div class="review-summary">
+              {% if review_feed.rating_display %}
+                <strong>{{ review_feed.rating_display }}</strong>
+                <span>average Google rating</span>
+              {% endif %}
+              {% if review_feed.user_rating_count %}
+                <span>{{ "{:,}".format(review_feed.user_rating_count) }} total Google ratings</span>
+              {% endif %}
+              <a class="button button--ghost" href="{{ review_feed.source_url }}" target="_blank" rel="noreferrer">{{ review_feed.source_label }}</a>
+            </div>
+          </div>
+
+          {% if review_marquee_items %}
+            <div class="review-marquee__viewport">
+              <div class="review-marquee__track">
+                {% for review in review_marquee_items %}
+                  <article class="review-card">
+                    <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+                    <p class="review-card__author">{{ review.author }}</p>
+                    {% if review.relative_time %}
+                      <p class="review-card__meta">{{ review.relative_time }}</p>
+                    {% endif %}
+                    <p>{{ review.text }}</p>
+                  </article>
+                {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <article class="review-empty section-card">
+              <p class="eyebrow">Live Feed Status</p>
+              <h3>Google Places support is scaffolded for SELA.</h3>
+              <p>{{ review_feed.description }}</p>
+              <a class="button button--ghost" href="{{ review_feed.source_url }}" target="_blank" rel="noreferrer">Open Google listing</a>
+            </article>
+          {% endif %}
+        </section>
+      </main>
+    </div>
+
+    <nav class="bottom-dock" aria-label="Quick navigation">
+      <div class="bottom-dock__inner">
+        {% for link in quick_links %}
+          <a class="bottom-dock__link" href="{{ link.href }}">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+    </nav>
+  </body>
+</html>

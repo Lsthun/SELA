@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sela-site"
+version = "0.1.0"
+description = "Standalone residential construction website for Sela Construction, LLC."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "Flask>=3.1,<4",
+    "python-dotenv>=1.0,<2",
+    "requests>=2.32,<3",
+]
+
+[project.scripts]
+sela-site = "app:main"
+
+[tool.setuptools]
+py-modules = ["app", "site_runtime"]
