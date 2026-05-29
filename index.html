@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="home.css">
   </head>
   <body>
-    <header class="site-banner-wrap">
+    <header class="site-banner-wrap" id="top">
       <div class="site-banner">
         <a class="site-banner__logo" href="#top" aria-label="Sela Construction, LLC home">
           <img src="assets/logo.png" alt="Sela Construction, LLC logo banner">
@@ -28,7 +28,7 @@
     </header>
 
     <div class="page-shell">
-      <main id="top">
+      <main>
         <section class="hero section-card">
           <div class="hero__content">
             <p class="eyebrow">Louisiana and Mississippi Gulf Coast</p>
@@ -42,21 +42,6 @@
               <a class="button" href="#services">Explore Residential Services</a>
               <a class="button button--ghost" href="#contact">Start Your Project</a>
             </div>
-
-            <dl class="hero__stats" aria-label="Company highlights">
-              <div>
-                <dt>Serving</dt>
-                <dd>Since 2005</dd>
-              </div>
-              <div>
-                <dt>Coverage</dt>
-                <dd>Louisiana + Mississippi</dd>
-              </div>
-              <div>
-                <dt>Focus</dt>
-                <dd>Remodels to ground-up homes</dd>
-              </div>
-            </dl>
           </div>
 
           <div class="hero__visual">
@@ -69,7 +54,7 @@
                 <img src="assets/gulf-coast-states.svg" alt="Louisiana and Mississippi together in the Gulf Coast service area graphic">
                 <figcaption class="region-card__copy">
                   <p class="eyebrow">Louisiana + Mississippi Gulf Coast</p>
-                  <h2>One Gulf Coast footprint, two licensed residential service areas.</h2>
+                  <h2>One Gulf Coast footprint, serving Louisiana and Mississippi since 2005.</h2>
                 </figcaption>
               </figure>
 
@@ -84,23 +69,6 @@
           </div>
         </section>
 
-        <section class="trust-strip" aria-label="Trust indicators">
-          <article class="trust-tile">
-            <p class="trust-tile__title">Since 2005</p>
-            <p>More than 20 years of hands-on project delivery across the Gulf Coast.</p>
-          </article>
-
-          <article class="trust-tile">
-            <p class="trust-tile__title">Management On Site</p>
-            <p>A small-team build model keeps communication direct from walkthrough to punch list.</p>
-          </article>
-
-          <article class="trust-tile">
-            <p class="trust-tile__title">LA + MS Licensed</p>
-            <p>Residential work is backed by active licensing in both service areas.</p>
-          </article>
-        </section>
-
         <section class="section-card section-stack" id="services">
           <div class="section-head">
             <p class="eyebrow">Residential Services</p>
@@ -110,45 +78,7 @@
             </p>
           </div>
 
-          <div class="service-grid">
-            <article class="service-card">
-              <span class="service-card__marker"></span>
-              <h3>Kitchen and Bath Renovations</h3>
-              <p>Rework the rooms that take the most daily wear with sharper layouts, durable materials, and better finish coordination.</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-card__marker"></span>
-              <h3>Whole-Home Remodeling</h3>
-              <p>Coordinate structural updates, finish selections, and trade sequencing without losing sight of how the home needs to function.</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-card__marker"></span>
-              <h3>Additions and Ground-Up Builds</h3>
-              <p>Expand the footprint or start from scratch with one team managing schedule, scope, and site flow.</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-card__marker"></span>
-              <h3>Custom Cabinets and Finish Work</h3>
-              <p>Bring storage, trim, and built-ins together with the rest of the remodel for a finished look that feels intentional and custom.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section-card section-stack showcase" id="work">
-          <div class="section-head section-head--split">
-            <div>
-              <p class="eyebrow">Residential Work</p>
-              <h2>Recent residential work across interiors, renovations, and exterior upgrades.</h2>
-            </div>
-            <p class="section-head__aside">
-              A mix of finished rooms, renovation progress, and exterior improvements shows the range of work Sela Construction takes on.
-            </p>
-          </div>
-
-          <div class="project-grid">
+          <div class="project-grid project-grid--services" id="work">
             <article class="project-card">
               <img src="assets/project-curb-appeal.jpg" alt="Residential exterior showing a polished home entry and curb appeal improvements">
               <div class="project-card__body">
@@ -319,9 +249,14 @@
 
           <div class="reel-grid">
             <article class="reel-card">
-              <a class="reel-card__link" href="https://www.facebook.com/reel/825694393917502" target="_blank" rel="noreferrer" aria-label="View featured reel on Facebook">Facebook</a>
+              <div class="reel-card__controls">
+                <button class="reel-card__refresh" type="button" data-refresh-reel="reel-player-featured" aria-controls="reel-player-featured" aria-label="Refresh featured reel"></button>
+                <a class="reel-card__link" href="https://www.facebook.com/reel/825694393917502" target="_blank" rel="noreferrer" aria-label="View featured reel on Facebook">Facebook</a>
+              </div>
               <div class="reel-embed">
                 <iframe
+                  id="reel-player-featured"
+                  data-reel-player
                   src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F825694393917502&show_text=false&width=560&t=0"
                   width="560"
                   height="996"
@@ -336,9 +271,14 @@
             </article>
 
             <article class="reel-card">
-              <a class="reel-card__link" href="https://www.facebook.com/reel/2463154427460645" target="_blank" rel="noreferrer" aria-label="View project reel on Facebook">Facebook</a>
+              <div class="reel-card__controls">
+                <button class="reel-card__refresh" type="button" data-refresh-reel="reel-player-project" aria-controls="reel-player-project" aria-label="Refresh project reel"></button>
+                <a class="reel-card__link" href="https://www.facebook.com/reel/2463154427460645" target="_blank" rel="noreferrer" aria-label="View project reel on Facebook">Facebook</a>
+              </div>
               <div class="reel-embed">
                 <iframe
+                  id="reel-player-project"
+                  data-reel-player
                   src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2463154427460645&show_text=false&width=560&t=0"
                   width="560"
                   height="996"
@@ -353,9 +293,9 @@
             </article>
           </div>
 
-          <p class="reel-section__more">
-            <a href="https://www.facebook.com/selaconstructionllc/reels/" target="_blank" rel="noreferrer">See more reels on Facebook</a>
-          </p>
+          <div class="reel-section__actions">
+            <a class="reel-section__more" href="https://www.facebook.com/selaconstructionllc/reels/" target="_blank" rel="noreferrer">See more reels on Facebook</a>
+          </div>
         </section>
 
         <section class="contact-band section-card section-stack" id="contact">
@@ -402,11 +342,11 @@
 
     <nav class="bottom-dock" aria-label="Quick navigation">
       <div class="bottom-dock__inner">
-        <a class="bottom-dock__link" href="#services">Services</a>
-        <a class="bottom-dock__link" href="#work">Residential Work</a>
+        <a class="bottom-dock__link" href="#services">Residential Services</a>
         <a class="bottom-dock__link" href="#reviews">Reviews</a>
         <a class="bottom-dock__link" href="#reels">Reels</a>
         <a class="bottom-dock__link" href="#contact">Contact</a>
+        <a class="bottom-dock__link" href="#top">SELA</a>
       </div>
     </nav>
 
@@ -414,6 +354,18 @@
       (function () {
         const dataElement = document.getElementById("review-data");
         const reviewDeck = document.getElementById("review-deck");
+        const refreshReelButtons = document.querySelectorAll("[data-refresh-reel]");
+
+        refreshReelButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            const frameId = button.getAttribute("data-refresh-reel");
+            const frame = frameId ? document.getElementById(frameId) : null;
+
+            if (frame) {
+              frame.src = frame.src;
+            }
+          });
+        });
 
         if (!dataElement || !reviewDeck) {
           return;
