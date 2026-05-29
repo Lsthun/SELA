@@ -4,13 +4,14 @@ Standalone static website project for Sela Construction, LLC.
 
 ## Structure
 
-- `home.html` contains the page markup.
+- `index.html` contains the page markup for the published site.
+- `home.html` redirects to `index.html` for compatibility.
 - `home.css` contains the styling.
 - `assets/` contains the logo, photography, and service area graphic.
 
 ## Local use
 
-Open `home.html` directly in a browser, or serve the folder with any static file server.
+Open `index.html` directly in a browser, or serve the folder with any static file server.
 
 Example:
 
@@ -19,7 +20,7 @@ cd /Users/sharifkharuf/Documents/SELA
 python3 -m http.server 5101
 ```
 
-Then open `http://127.0.0.1:5101/home.html`.
+Then open `http://127.0.0.1:5101/`.
 
 ## Notes
 
