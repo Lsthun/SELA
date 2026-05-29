@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ site.name }} | Residential Construction</title>
+    <title>Sela Construction, LLC | Residential Construction</title>
     <meta
       name="description"
       content="Residential construction, remodeling, additions, and custom finish work for homeowners across the Louisiana and Mississippi Gulf Coast."
@@ -11,18 +11,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('public_file', filename='home.css') }}">
+    <link rel="stylesheet" href="home.css">
   </head>
   <body>
     <header class="site-banner-wrap">
       <div class="site-banner">
-        <a class="site-banner__logo" href="#top" aria-label="{{ site.name }} home">
-          <img src="{{ url_for('public_file', filename=site.logo_asset) }}" alt="{{ site.name }} logo banner">
+        <a class="site-banner__logo" href="#top" aria-label="Sela Construction, LLC home">
+          <img src="assets/logo.png" alt="Sela Construction, LLC logo banner">
         </a>
 
         <div class="site-banner__actions">
-          <a class="button button--ghost" href="{{ site.phone_href }}">Call {{ site.phone_display }}</a>
-          <a class="button" href="{{ site.quote_href }}">Request a Quote</a>
+          <a class="button button--ghost" href="tel:+15044601717">Call (504) 460-1717</a>
+          <a class="button" href="mailto:tgiarrusso@sela-construction.com?subject=Residential%20Project%20Inquiry">Request a Quote</a>
         </div>
       </div>
     </header>
@@ -31,7 +31,7 @@
       <main id="top">
         <section class="hero section-card">
           <div class="hero__content">
-            <p class="eyebrow">{{ site.eyebrow }}</p>
+            <p class="eyebrow">Louisiana and Mississippi Gulf Coast</p>
             <h1>Residential construction that feels personal, organized, and built to last.</h1>
             <p class="hero__lede">
               Sela Construction shifts the message toward the home: kitchens, baths, additions,
@@ -61,12 +61,12 @@
 
           <div class="hero__visual">
             <figure class="hero-photo">
-              <img src="{{ url_for('public_file', filename=site.hero_image_asset) }}" alt="Residential construction showcase">
+              <img src="assets/hero-exterior.jpg" alt="Residential construction showcase">
             </figure>
 
             <div class="hero__visual-grid">
               <figure class="region-card">
-                <img src="{{ url_for('public_file', filename=site.service_area_asset) }}" alt="Louisiana and Mississippi together in the Gulf Coast service area graphic">
+                <img src="assets/gulf-coast-states.svg" alt="Louisiana and Mississippi together in the Gulf Coast service area graphic">
                 <figcaption class="region-card__copy">
                   <p class="eyebrow">Louisiana + Mississippi Gulf Coast</p>
                   <h2>One Gulf Coast footprint, two licensed residential service areas.</h2>
@@ -90,12 +90,22 @@
         </section>
 
         <section class="trust-strip" aria-label="Trust indicators">
-          {% for point in trust_points %}
+          
             <article class="trust-tile">
-              <p class="trust-tile__title">{{ point.title }}</p>
-              <p>{{ point.description }}</p>
+              <p class="trust-tile__title">Since 2005</p>
+              <p>More than 20 years of hands-on project delivery across the Gulf Coast.</p>
             </article>
-          {% endfor %}
+          
+            <article class="trust-tile">
+              <p class="trust-tile__title">Management On Site</p>
+              <p>A small-team build model keeps communication direct from walkthrough to punch list.</p>
+            </article>
+          
+            <article class="trust-tile">
+              <p class="trust-tile__title">LA + MS Licensed</p>
+              <p>Residential work is backed by active licensing in both service areas.</p>
+            </article>
+          
         </section>
 
         <section class="section-card section-stack" id="services">
@@ -109,13 +119,31 @@
           </div>
 
           <div class="service-grid">
-            {% for service in services %}
+            
               <article class="service-card">
                 <span class="service-card__marker"></span>
-                <h3>{{ service.title }}</h3>
-                <p>{{ service.description }}</p>
+                <h3>Kitchen and Bath Renovations</h3>
+                <p>Rework the rooms that take the most daily wear with sharper layouts, durable materials, and better finish coordination.</p>
               </article>
-            {% endfor %}
+            
+              <article class="service-card">
+                <span class="service-card__marker"></span>
+                <h3>Whole-Home Remodeling</h3>
+                <p>Coordinate structural updates, finish selections, and trade sequencing without losing sight of how the home needs to function.</p>
+              </article>
+            
+              <article class="service-card">
+                <span class="service-card__marker"></span>
+                <h3>Additions and Ground-Up Builds</h3>
+                <p>Expand the footprint or start from scratch with one team managing schedule, scope, and site flow.</p>
+              </article>
+            
+              <article class="service-card">
+                <span class="service-card__marker"></span>
+                <h3>Custom Cabinets and Finish Work</h3>
+                <p>Bring storage, trim, and built-ins into the same visual language as the rest of the remodel.</p>
+              </article>
+            
           </div>
         </section>
 
@@ -131,15 +159,31 @@
           </div>
 
           <div class="project-grid">
-            {% for project in projects %}
+            
               <article class="project-card">
-                <img src="{{ url_for('public_file', filename=project.image_asset) }}" alt="{{ project.image_alt }}">
+                <img src="assets/project-interior.jpg" alt="Interior residential renovation with layered lighting and natural finishes">
                 <div class="project-card__body">
-                  <h3>{{ project.title }}</h3>
-                  <p>{{ project.description }}</p>
+                  <h3>Bright, hardworking interiors</h3>
+                  <p>Residential spaces shaped around better circulation, layered light, and material choices that stay calm over time.</p>
                 </div>
               </article>
-            {% endfor %}
+            
+              <article class="project-card">
+                <img src="assets/project-finish.jpg" alt="Finished residential room with custom trim and cabinetry details">
+                <div class="project-card__body">
+                  <h3>Detailed finish packages</h3>
+                  <p>Cabinetry, trim, and paint scopes that feel coordinated instead of added on at the end.</p>
+                </div>
+              </article>
+            
+              <article class="project-card">
+                <img src="assets/project-curb-appeal.jpg" alt="Residential exterior showing a polished home entry and curb appeal improvements">
+                <div class="project-card__body">
+                  <h3>A warm first impression</h3>
+                  <p>Street-facing updates and entry sequences that raise curb appeal without feeling disconnected from the house.</p>
+                </div>
+              </article>
+            
           </div>
         </section>
 
@@ -150,13 +194,25 @@
           </div>
 
           <div class="process-grid">
-            {% for item in process_steps %}
+            
               <article class="process-card">
-                <span class="process-card__step">{{ item.step }}</span>
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
+                <span class="process-card__step">01</span>
+                <h3>Walk the home</h3>
+                <p>Start with the actual constraints: layout pain points, finish goals, site conditions, and budget priorities.</p>
               </article>
-            {% endfor %}
+            
+              <article class="process-card">
+                <span class="process-card__step">02</span>
+                <h3>Align scope and pricing</h3>
+                <p>Define what changes, what stays, and how the work should sequence before the house gets opened up.</p>
+              </article>
+            
+              <article class="process-card">
+                <span class="process-card__step">03</span>
+                <h3>Build with steady communication</h3>
+                <p>Keep homeowners informed with direct contact, visible site leadership, and a disciplined closeout.</p>
+              </article>
+            
           </div>
         </section>
 
@@ -169,31 +225,31 @@
             </p>
 
             <div class="contact-grid">
-              <a class="contact-item" href="{{ site.phone_href }}">
+              <a class="contact-item" href="tel:+15044601717">
                 <span class="contact-item__label">Phone</span>
-                <strong>{{ site.phone_display }}</strong>
+                <strong>(504) 460-1717</strong>
               </a>
-              <a class="contact-item" href="{{ site.email_href }}">
+              <a class="contact-item" href="mailto:tgiarrusso@sela-construction.com">
                 <span class="contact-item__label">Email</span>
-                <strong>{{ site.email }}</strong>
+                <strong>tgiarrusso@sela-construction.com</strong>
               </a>
               <div class="contact-item">
                 <span class="contact-item__label">Service Area</span>
-                <strong>{{ site.location }}</strong>
+                <strong>Diamondhead, MS 39525</strong>
               </div>
               <div class="contact-item">
                 <span class="contact-item__label">Office Hours</span>
-                <strong>{{ site.hours }}</strong>
+                <strong>Monday - Friday · 8:00 AM - 5:00 PM</strong>
               </div>
             </div>
           </div>
 
           <aside class="contact-band__aside">
-            <img src="{{ url_for('public_file', filename=site.logo_asset) }}" alt="{{ site.name }} mark">
-            <p>{{ site.license_copy }}</p>
+            <img src="assets/logo.png" alt="Sela Construction, LLC mark">
+            <p>Licensed for residential and commercial construction in Louisiana and Mississippi.</p>
             <div class="contact-band__actions">
-              <a class="button" href="{{ site.quote_href }}">Request a Quote</a>
-              <a class="button button--ghost" href="{{ site.phone_href }}">Call {{ site.phone_display }}</a>
+              <a class="button" href="mailto:tgiarrusso@sela-construction.com?subject=Residential%20Project%20Inquiry">Request a Quote</a>
+              <a class="button button--ghost" href="tel:+15044601717">Call (504) 460-1717</a>
             </div>
           </aside>
         </section>
@@ -201,55 +257,43 @@
         <section class="review-marquee" id="reviews" aria-labelledby="review-heading">
           <div class="review-marquee__head">
             <div class="review-marquee__copy">
-              <p class="eyebrow">Google Reviews</p>
-              <h2 id="review-heading">5-star homeowner feedback, wired for Google Places.</h2>
-              <p>{{ review_feed.description }}</p>
+              <p class="eyebrow">Client Reviews</p>
+              <h2 id="review-heading">Homeowner feedback will be published here as a static review section.</h2>
+              <p>A curated set of customer reviews will be added here once the final approved review export is ready.</p>
             </div>
 
             <div class="review-summary">
-              {% if review_feed.rating_display %}
-                <strong>{{ review_feed.rating_display }}</strong>
-                <span>average Google rating</span>
-              {% endif %}
-              {% if review_feed.user_rating_count %}
-                <span>{{ "{:,}".format(review_feed.user_rating_count) }} total Google ratings</span>
-              {% endif %}
-              <a class="button button--ghost" href="{{ review_feed.source_url }}" target="_blank" rel="noreferrer">{{ review_feed.source_label }}</a>
+              
+              
+              <a class="button button--ghost" href="https://www.google.com/search?q=sela+construction" target="_blank" rel="noreferrer">View Google listing</a>
             </div>
           </div>
 
-          {% if review_marquee_items %}
-            <div class="review-marquee__viewport">
-              <div class="review-marquee__track">
-                {% for review in review_marquee_items %}
-                  <article class="review-card">
-                    <div class="review-card__stars" aria-hidden="true">★★★★★</div>
-                    <p class="review-card__author">{{ review.author }}</p>
-                    {% if review.relative_time %}
-                      <p class="review-card__meta">{{ review.relative_time }}</p>
-                    {% endif %}
-                    <p>{{ review.text }}</p>
-                  </article>
-                {% endfor %}
-              </div>
-            </div>
-          {% else %}
+          
             <article class="review-empty section-card">
-              <p class="eyebrow">Live Feed Status</p>
-              <h3>Google Places support is scaffolded for SELA.</h3>
-              <p>{{ review_feed.description }}</p>
-              <a class="button button--ghost" href="{{ review_feed.source_url }}" target="_blank" rel="noreferrer">Open Google listing</a>
+              <p class="eyebrow">Reviews Coming Soon</p>
+              <h3>Static homeowner reviews will be added to this section.</h3>
+              <p>For now, the page stays fully static while the review content is prepared for publication.</p>
+              <a class="button button--ghost" href="https://www.google.com/search?q=sela+construction" target="_blank" rel="noreferrer">View Google listing</a>
             </article>
-          {% endif %}
+          
         </section>
       </main>
     </div>
 
     <nav class="bottom-dock" aria-label="Quick navigation">
       <div class="bottom-dock__inner">
-        {% for link in quick_links %}
-          <a class="bottom-dock__link" href="{{ link.href }}">{{ link.label }}</a>
-        {% endfor %}
+        
+          <a class="bottom-dock__link" href="#services">Services</a>
+        
+          <a class="bottom-dock__link" href="#work">Residential Work</a>
+        
+          <a class="bottom-dock__link" href="#process">Process</a>
+        
+          <a class="bottom-dock__link" href="#reviews">Reviews</a>
+        
+          <a class="bottom-dock__link" href="#contact">Contact</a>
+        
       </div>
     </nav>
   </body>

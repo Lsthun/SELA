@@ -1,36 +1,27 @@
 # SELA Website
 
-Standalone website project for Sela Construction, LLC.
+Standalone static website project for Sela Construction, LLC.
 
-## Run locally
+## Structure
 
-1. Create a virtual environment.
-2. Install the project dependencies.
-3. Start the app.
+- `home.html` contains the page markup.
+- `home.css` contains the styling.
+- `assets/` contains the logo, photography, and service area graphic.
+
+## Local use
+
+Open `home.html` directly in a browser, or serve the folder with any static file server.
 
 Example:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
-python app.py
+cd /Users/sharifkharuf/Documents/SELA
+python3 -m http.server 5101
 ```
 
-The site runs on `http://127.0.0.1:5101` by default.
+Then open `http://127.0.0.1:5101/home.html`.
 
-## Environment
+## Notes
 
-Copy `.env.example` to `.env` and fill in any values you need.
-
-`GOOGLE_PLACES_API_KEY`
-: Enables the live 5-star Google Places review feed.
-
-`SELA_GOOGLE_PLACE_QUERY`
-: Text query used to resolve the Google Places listing.
-
-`SELA_GOOGLE_PLACE_ID`
-: Optional explicit Google Place ID to avoid query ambiguity.
-
-`SELA_HOST`, `SELA_PORT`, `SELA_DEBUG`
-: Local development server settings.
+This project has no Flask app, build step, or server-side runtime.
+The reviews section is currently a static placeholder and can be replaced later with approved review content.
